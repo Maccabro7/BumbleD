@@ -1,35 +1,54 @@
-@import './base.css';
+html,
+body {
+  height: 100%;
+}
 
-#app {
-  max-width: 1280px;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--h1-size);
+  font-family: Metropolis-SemiBold;
+  color: var(--text-c);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  font-family: Metropolis-SemiBold;
+  color: var(--text-c);
+}
+
+h3 {
+  font-size: var(--h3-size);
+  font-family: Metropolis-SemiBold;
+  color: var(--text-c);
+}
+
+h4 {
+  font-size: var(--h4-size);
+  font-family: Metropolis-SemiBold;
+  color: var(--text-c);
+}
+
+p {
+  font-size: var(--p-size);
+  font-family: Metropolis-Regular;
+  color: var(--text-c);
+}
+
+.section {
+  min-height: 860px;
+  height: 90vh;
+}
+
+.container {
+  max-width: var(--max-w-container);
+  min-width: var(--min-w-container);
   margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
 }
