@@ -1,44 +1,29 @@
 <template>
   <main>
-    <section class="section hero-section">
-      <div class="container">
-        <NavBar />
-        <div class="hero-text">
-          <h1>Home View</h1>
-          <p>dsdasdsafasddas</p>
-        </div>
-        <p>TabSystem</p>
-      </div>
-    </section>
+    <HomeHeroSection />
+    <HomeJobListSection />
+    <HomeAboutUs />
+    <HomeTestimonials />
+    <HomeDesignBuild />
+    <Footer />
   </main>
 </template>
 
 <script setup>
-import NavBar from "../components/NavBar.vue";
-
+import HomeHeroSection from "../components/Home/HomeHeroSection.vue";
+import HomeJobListSection from "../components/Home/HomeJobListSection.vue";
+import HomeAboutUs from "../components/Home/HomeAboutUs.vue";
+import HomeTestimonials from "../components/Home/HomeTestimonials.vue";
+import HomeDesignBuild from "../components/Home/HomeDesignBuild.vue";
+import Footer from "../components/Footer.vue";
 components: {
-  NavBar;
+  HomeHeroSection,
+    HomeJobListSection,
+    HomeAboutUs,
+    HomeTestimonials,
+    HomeDesignBuild,
+    Footer;
 }
 </script>
 
-<style scoped>
-.hero-section {
-  background-image: url("../assets/img/img_home_hero.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  min-width: var(--min-w-container);
-}
-
-.container {
-  padding: 8px 50px;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.container p {
-  padding-bottom: 150px;
-}
-</style>
+<style scoped></style>

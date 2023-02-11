@@ -1,3 +1,76 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+@font-face {
+  font-family: Metropolis-Regular;
+  src: url("/src/assets/fonts/Metropolis-Regular.woff");
+}
+
+@font-face {
+  font-family: Metropolis-SemiBold;
+  src: url("/src/assets/fonts/Metropolis-SemiBold.woff");
+}
+
+@font-face {
+  font-family: Metropolis-ExtraLight;
+  src: url("/src/assets/fonts/Metropolis-ExtraLight.woff");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Metropolis-Regular;
+}
+
+:root {
+  /* Font Sizes */
+  --h1-size: 3.81rem;
+  --h2-size: 2.93rem;
+  --h3-size: 2.25rem;
+  --h4-size: 1.68em;
+  --p-size: 1rem;
+  --p-btn-size: 1.12rem;
+
+  /* Colours */
+
+  --text-c: #fffefc;
+  --primary-c: #1a5b57;
+  --primary-low-c: #f2f7f6;
+  --secundary-c: #555;
+  --accent-c: #cc7a00;
+  --light-grey-c: #555;
+  --dark-grey-c: #555;
+
+  /* Margin Sizes */
+
+  --xl-m: 128px;
+  --l-m: 96px;
+  --m-m: 48px;
+  --s-m: 8px;
+  --xs-m: 4px;
+
+  /* Max/Min Sizes */
+
+  --max-w-container: 1100px;
+  --min-w-container: 800px;
+  --max-h-section: 90vh;
+  --min-h-section: 860px;
+  /* --max-h-hero: 817px;
+  --min-w: 800px; */
+
+  /* Styling */
+
+  --border-radius: 1px;
+
+  --vignette-main: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
 html,
 body {
   height: 100%;
@@ -15,40 +88,108 @@ p {
 h1 {
   font-size: var(--h1-size);
   font-family: Metropolis-SemiBold;
-  color: var(--text-c);
+  /* color: var(--text-c); */
 }
 
 h2 {
   font-size: var(--h2-size);
   font-family: Metropolis-SemiBold;
-  color: var(--text-c);
+  /* color: var(--text-c); */
 }
 
 h3 {
   font-size: var(--h3-size);
   font-family: Metropolis-SemiBold;
-  color: var(--text-c);
+  /* color: var(--text-c); */
 }
 
 h4 {
   font-size: var(--h4-size);
   font-family: Metropolis-SemiBold;
-  color: var(--text-c);
+  /* color: var(--text-c); */
 }
 
 p {
   font-size: var(--p-size);
   font-family: Metropolis-Regular;
-  color: var(--text-c);
+  line-height: 133%;
+  /* color: var(--text-c); */
+}
+
+.p-btn {
+  font-size: var(--p-btn-size);
 }
 
 .section {
-  min-height: 860px;
-  height: 90vh;
+  padding: var(--xl-m) 0;
+  background-color: var(--primary-low-c);
 }
 
 .container {
   max-width: var(--max-w-container);
   min-width: var(--min-w-container);
   margin: 0 auto;
+}
+
+.separator-height {
+  height: 256px;
+  width: 24px;
+  background-color: var(--accent-c);
+  border-radius: 1px;
+  /* flex: 1; */
+  max-width: var(--xs-m);
+  align-self: center;
+}
+
+/* a {
+  font-size: var(--p-size);
+  font-family: Metropolis-ExtraLight;
+  color: rgba(250, 250, 250, 0.77);
+  text-decoration: none;
+  position: relative;
+  transition: 0.2s ease-out;
+}
+a:hover {
+  color: rgba(250, 250, 250, 1);
+} */
+
+a {
+  font-size: var(--p-size);
+  font-family: Metropolis-ExtraLight;
+  color: rgba(250, 250, 250, 0.77);
+  text-decoration: none;
+  position: relative;
+  transition: 0.2s ease-out;
+}
+a:hover {
+  color: rgba(250, 250, 250, 1);
+}
+
+a:not(#nav2Style)::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-c);
+  transition: 0.2s ease-out;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+a:hover:not(#nav2Style)::after {
+  content: "";
+  width: 100%;
+}
+
+a.router-link-exact-active {
+  color: rgba(250, 250, 250, 1);
+  font-family: Metropolis-SemiBold;
+}
+
+a.router-link-exact-active:not(#nav2Style)::after {
+  content: "";
+  width: 100%;
+  background-color: var(--primary-c);
+  position: absolute;
+  height: 2px;
+  bottom: -3px;
 }
