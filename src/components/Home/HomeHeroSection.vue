@@ -16,8 +16,12 @@
           </p>
         </div>
         <div class="hero-actions">
-          <router-link id="nav2Style" to="/portfolio">Portfolio</router-link>
-          <router-link to="#aboutus">About us</router-link>
+          <router-link class="navButton" to="/portfolio">Portfolio</router-link>
+          <router-link
+            class="avoidStyle"
+            :to="{ name: 'home', hash: '#aboutHash' }"
+            >About us</router-link
+          >
         </div>
       </div>
       <p>TabSystem</p>
@@ -63,5 +67,6 @@ export default {
 .hero-actions {
   display: flex;
   gap: var(--m-m);
+  align-items: center;
 }
 </style>

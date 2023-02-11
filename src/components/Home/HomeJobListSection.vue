@@ -8,7 +8,9 @@
           construction<br />
           needs
         </h2>
-        <router-link to="/services">View all Services</router-link>
+        <router-link class="navButton" to="/services"
+          >View all Services</router-link
+        >
       </div>
       <div class="joblist-list-box">
         <div class="joblist-specialise-box">
@@ -159,10 +161,17 @@ export default {};
 </script>
 
 <style scoped>
+.joblist-section {
+  background-color: var(--text-c);
+}
 .container {
   display: flex;
   justify-content: space-between;
   color: var(--primary-c);
+}
+
+.joblist-title h2 {
+  margin-bottom: var(--m-m);
 }
 
 .joblist-list-box {
@@ -177,7 +186,7 @@ export default {};
   gap: var(--s-m);
 }
 .joblist-label-icon-bg {
-  background-color: var(--text-c);
+  background-color: var(--primary-low-c);
   border-radius: 50%;
 }
 

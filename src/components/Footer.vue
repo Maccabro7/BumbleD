@@ -13,7 +13,7 @@
           <img
             src="../assets/icons/ico_instagram_white.png"
             alt="Link to BumbleD Instagram"
-            id="nav2Style"
+            class="linkInstagram"
           />
         </a>
       </div>

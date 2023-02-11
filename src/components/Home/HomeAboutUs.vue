@@ -1,5 +1,5 @@
 <template>
-  <section class="section aboutus-section">
+  <section class="section aboutus-section" id="aboutHash">
     <div class="container">
       <div class="aboutus-text">
         <div class="aboutus-text-main">

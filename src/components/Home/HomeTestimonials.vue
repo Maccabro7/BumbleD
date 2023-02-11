@@ -12,7 +12,7 @@
           <img
             src="../../assets/icons/ico_instagram.png"
             alt="BumbleD Instagram Image Link"
-            id="nav2Style"
+            class="linkInstagram"
           />
         </div>
       </div>
@@ -36,6 +36,9 @@ export default {};
 </script>
 
 <style scoped>
+.testimonial-section {
+  background-color: var(--text-c);
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -59,7 +62,7 @@ export default {};
 
 .testimonial-container {
   height: 400px;
-  background-color: aquamarine;
+  background-color: var(--primary-low-c);
   flex: 1;
   border-radius: var(--border-radius);
 }

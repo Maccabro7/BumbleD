@@ -38,8 +38,10 @@ body {
   --text-c: #fffefc;
   --primary-c: #1a5b57;
   --primary-low-c: #f2f7f6;
+
   --secundary-c: #555;
   --accent-c: #cc7a00;
+  --accent-dark-c: #794800;
   --light-grey-c: #555;
   --dark-grey-c: #555;
 
@@ -69,6 +71,8 @@ body {
     rgba(0, 0, 0, 0.5) 30%,
     rgba(0, 0, 0, 0.1)
   );
+  --transition: 0.2s ease-out;
+  /*  */
 }
 
 html,
@@ -141,41 +145,35 @@ p {
   align-self: center;
 }
 
-/* a {
+/* Links & Navs */
+/* Links & Navs */
+/* Links & Navs */
+
+a,
+a:visited {
   font-size: var(--p-size);
   font-family: Metropolis-ExtraLight;
   color: rgba(250, 250, 250, 0.77);
   text-decoration: none;
   position: relative;
-  transition: 0.2s ease-out;
+  transition: var(--transition);
 }
-a:hover {
-  color: rgba(250, 250, 250, 1);
-} */
-
-a {
-  font-size: var(--p-size);
-  font-family: Metropolis-ExtraLight;
-  color: rgba(250, 250, 250, 0.77);
-  text-decoration: none;
-  position: relative;
-  transition: 0.2s ease-out;
-}
-a:hover {
+a:hover,
+a:focus {
   color: rgba(250, 250, 250, 1);
 }
 
-a:not(#nav2Style)::after {
+a:not(.avoidStyle):not(.navButton)::after {
   content: "";
   width: 0;
   height: 2px;
   background-color: var(--accent-c);
-  transition: 0.2s ease-out;
+  transition: var(--transition);
   position: absolute;
   bottom: -3px;
   left: 0;
 }
-a:hover:not(#nav2Style)::after {
+a:hover:not(.avoidStyle):not(.navButton)::after {
   content: "";
   width: 100%;
 }
@@ -185,11 +183,30 @@ a.router-link-exact-active {
   font-family: Metropolis-SemiBold;
 }
 
-a.router-link-exact-active:not(#nav2Style)::after {
+a.router-link-exact-active:not(.avoidStyle):not(.navButton)::after {
   content: "";
   width: 100%;
   background-color: var(--primary-c);
   position: absolute;
   height: 2px;
   bottom: -3px;
+}
+
+.navButton,
+.navButton:visited {
+  padding: 8px 12px;
+  background-color: var(--primary-c);
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+}
+
+.navButton:hover,
+.navButton:focus {
+  background-color: var(--accent-c);
+  box-shadow: 0 0 8px var(--accent-c);
+}
+
+.navButton:active {
+  background-color: var(--accent-dark-c);
+  box-shadow: none;
 }

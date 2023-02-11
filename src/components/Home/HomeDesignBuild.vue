@@ -18,7 +18,9 @@
         </div>
         <div class="designbuild-action">
           <p>More details on our Services page</p>
-          <router-link id="nav2Style" to="/services">View Services</router-link>
+          <router-link class="navButton" to="/services"
+            >View Services</router-link
+          >
         </div>
       </div>
       <div class="designbuild-bubbles">
@@ -83,6 +85,14 @@ export default {};
   max-width: 375px;
 }
 
+.designbuild-title {
+  margin-bottom: var(--m-m);
+}
+
+.designbuild-action p {
+  margin-bottom: var(--s-m);
+}
+
 .designbuild-bubbles {
   /* flex: 1; */
   display: flex;
@@ -107,10 +117,8 @@ export default {};
   height: 64px;
   padding: 8px;
 }
-h2 {
-  color: var(--accent-c);
-}
 
+h2,
 h3 {
   color: var(--primary-c);
 }
