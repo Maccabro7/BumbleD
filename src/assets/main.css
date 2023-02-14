@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  font-family: Metropolis-ExtraLight;
-  src: url("/src/assets/fonts/Metropolis-ExtraLight.woff");
+  font-family: Metropolis-Black;
+  src: url("/src/assets/fonts/Metropolis-Black.woff");
 }
 
 body {
@@ -98,19 +98,19 @@ h1 {
 h2 {
   font-size: var(--h2-size);
   font-family: Metropolis-SemiBold;
-  /* color: var(--text-c); */
+  color: var(--primary-c);
 }
 
 h3 {
   font-size: var(--h3-size);
   font-family: Metropolis-SemiBold;
-  /* color: var(--text-c); */
+  color: var(--primary-c);
 }
 
 h4 {
   font-size: var(--h4-size);
-  font-family: Metropolis-SemiBold;
-  /* color: var(--text-c); */
+  font-family: Metropolis-Regular;
+  color: var(--primary-c);
 }
 
 p {
@@ -152,7 +152,7 @@ p {
 a,
 a:visited {
   font-size: var(--p-size);
-  font-family: Metropolis-ExtraLight;
+  font-family: Metropolis-Regular;
   color: rgba(250, 250, 250, 0.77);
   text-decoration: none;
   position: relative;
@@ -194,10 +194,11 @@ a.router-link-exact-active:not(.avoidStyle):not(.navButton)::after {
 
 .navButton,
 .navButton:visited {
-  padding: 8px 12px;
+  padding: 10px 14px;
   background-color: var(--primary-c);
   transition: var(--transition);
   border-radius: var(--border-radius);
+  font-family: Metropolis-Regular;
 }
 
 .navButton:hover,

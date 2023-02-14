@@ -1,15 +1,19 @@
 <template>
-  <div class="about">
-    <h1>Services Page</h1>
-  </div>
+  <main>
+    <ServicesHeroSection />
+    <ServicesProcessSection />
+    <ServicesTradeSection />
+    <ServicesContactSection />
+    <Footer />
+  </main>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import ServicesHeroSection from "../components/Services/ServicesHeroSection.vue";
+import ServicesProcessSection from "../components/Services/ServicesProcessSection.vue";
+import ServicesTradeSection from "../components/Services/ServicesTradeSection.vue";
+import ServicesContactSection from "../components/Services/ServicesContactSection.vue";
+import Footer from "../components/Footer.vue";
+</script>
+
+<style></style>

@@ -90,7 +90,7 @@ export default {};
 }
 
 .designbuild-action p {
-  margin-bottom: var(--s-m);
+  margin-bottom: 36px;
 }
 
 .designbuild-bubbles {

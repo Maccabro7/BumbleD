@@ -9,11 +9,15 @@
         </h2>
         <div class="testimonial-social">
           <h4>Follow us on</h4>
-          <img
-            src="../../assets/icons/ico_instagram.png"
-            alt="BumbleD Instagram Image Link"
-            class="linkInstagram"
-          />
+          <a
+            href="https://www.instagram.com/bumbled.ltd/"
+            class="avoidStyle linkInstagram"
+          >
+            <img
+              src="../../assets/icons/ico_instagram.png"
+              alt="BumbleD Instagram Image Link"
+            />
+          </a>
         </div>
       </div>
       <div class="testimonial-container">

@@ -9,11 +9,13 @@
         <router-link to="/services">Services</router-link>
         <router-link to="/portfolio">Portfolio</router-link>
         <router-link to="/contact">Contact us</router-link>
-        <a href="https://www.instagram.com/bumbled.ltd/">
+        <a
+          href="https://www.instagram.com/bumbled.ltd/"
+          class="linkInstagram avoidStyle"
+        >
           <img
             src="../assets/icons/ico_instagram_white.png"
             alt="Link to BumbleD Instagram"
-            class="linkInstagram"
           />
         </a>
       </div>

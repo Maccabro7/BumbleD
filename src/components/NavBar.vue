@@ -7,7 +7,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/services">Services</router-link>
       <router-link to="/portfolio">Portfolio</router-link>
-      <router-link to="/contact">Contact us</router-link>
+      <router-link to="/contact" class="navButton">Contact us</router-link>
     </div>
   </nav>
 </template>
@@ -20,7 +20,7 @@ export default {};
 .main-nav {
   max-width: var(--max-w-container);
   min-width: var(--min-w-container);
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,5 +34,6 @@ nav img {
 .main-nav-buttons {
   display: flex;
   gap: var(--m-m);
+  align-items: center;
 }
 </style>

@@ -16,14 +16,14 @@ import HomeAboutUs from "../components/Home/HomeAboutUs.vue";
 import HomeTestimonials from "../components/Home/HomeTestimonials.vue";
 import HomeDesignBuild from "../components/Home/HomeDesignBuild.vue";
 import Footer from "../components/Footer.vue";
-components: {
-  HomeHeroSection,
-    HomeJobListSection,
-    HomeAboutUs,
-    HomeTestimonials,
-    HomeDesignBuild,
-    Footer;
-}
+// components: {
+//   HomeHeroSection,
+//     HomeJobListSection,
+//     HomeAboutUs,
+//     HomeTestimonials,
+//     HomeDesignBuild,
+//     Footer;
+// }
 </script>
 
 <style scoped></style>
