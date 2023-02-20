@@ -20,7 +20,15 @@
   </section>
 </template>
 
-<script setup></script>
+<script>
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import "vue3-carousel/dist/carousel.css";
+
+export default {
+  components: { Carousel, Navigation, Pagination, Slide },
+  setup() {},
+};
+</script>
 
 <style>
 .trade-text {

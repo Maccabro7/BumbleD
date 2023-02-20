@@ -1,12 +1,26 @@
 <template>
+  <div class="navbar-container">
+    <NavBar />
+  </div>
   <RouterView />
 </template>
 
 <script setup>
+import NavBar from "./components/NavBar.vue";
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
+<style>
+body {
+  position: relative;
+}
+</style>
 <style scoped>
+.navbar-container {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
 /* header {
   line-height: 1.5;
   max-height: 100vh;

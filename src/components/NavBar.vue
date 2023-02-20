@@ -26,6 +26,7 @@ export default {};
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  padding-top: var(--s-m);
 }
 nav img {
   width: 102px;

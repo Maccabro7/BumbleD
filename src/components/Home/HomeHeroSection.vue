@@ -1,7 +1,6 @@
 <template>
   <section class="hero-section">
     <div class="container">
-      <NavBar />
       <div class="hero-text-actions">
         <div class="hero-text">
           <h1>Introduce a new <br />lifestyle to your home</h1>
@@ -24,7 +23,6 @@
           >
         </div>
       </div>
-      <p>TabSystem</p>
     </div>
   </section>
 </template>
@@ -38,8 +36,7 @@ export default {
 
 <style scoped>
 .hero-section {
-  background-image: var(--vignette-main),
-    url("../../assets/img/img_home_hero.webp");
+  background-image: url("../../assets/img/home_hero.webp");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -54,7 +51,8 @@ export default {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .hero-text-actions {

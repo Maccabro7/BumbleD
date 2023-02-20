@@ -1,6 +1,6 @@
 <template>
   <main>
-    <ServicesHeroSection />
+    <ServicesHeroSectionCopy />
     <ServicesProcessSection />
     <ServicesTradeSection />
     <ServicesContactSection />
@@ -9,6 +9,7 @@
 </template>
 
 <script setup>
+import ServicesHeroSectionCopy from "../components/Services/ServicesHeroSectionCopy.vue";
 import ServicesHeroSection from "../components/Services/ServicesHeroSection.vue";
 import ServicesProcessSection from "../components/Services/ServicesProcessSection.vue";
 import ServicesTradeSection from "../components/Services/ServicesTradeSection.vue";
