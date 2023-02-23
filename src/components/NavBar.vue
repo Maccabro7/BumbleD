@@ -1,7 +1,7 @@
 <template>
   <nav class="main-nav">
     <router-link class="avoidStyle" to="/">
-      <img src="../assets/logo_bbd.png" alt="BumbleD Logo" />
+      <img src="../assets/logo_bbd_white.png" alt="BumbleD Logo" />
     </router-link>
     <div class="main-nav-buttons">
       <router-link to="/">Home</router-link>

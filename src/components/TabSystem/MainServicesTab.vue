@@ -29,10 +29,6 @@
       >
     </div>
   </transition-group>
-
-  <!-- @click="$emit('changeMainIndex', index)" -->
-
-  <!-- @click="handleTab(index)" -->
 </template>
 
 <script>

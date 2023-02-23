@@ -38,6 +38,7 @@ body {
   --text-c: #fffefc;
   --text-low-c: rgba(255, 254, 252, 0.9);
   --primary-c: #1a5b57;
+  --primary-low-o-c: rgba(26, 91, 87, 0.3);
   --primary-low-c: #f2f7f6;
 
   --secundary-c: #555;

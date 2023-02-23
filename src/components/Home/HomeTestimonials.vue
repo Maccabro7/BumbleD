@@ -105,8 +105,11 @@ export default {
   gap: var(--m-m);
 }
 .testimonial-text {
-  font-size: var(--p-btn-size);
+  /* font-size: var(--p-btn-size); */
+  font-size: 1.2rem;
   color: var(--primary-c);
+  font-family: Metropolis-SemiBold;
+  line-height: 1.35;
   text-align: start;
 }
 

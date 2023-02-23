@@ -32,7 +32,7 @@
         <div class="separator-height"></div>
         <div class="aboutus-side">
           <img
-            src="../../assets/img/bumbled_logo_black.svg"
+            src="../../assets/logo_bbd_black.svg"
             alt="BumbleD Logo Coloured Version"
             class="aboutus-logo"
           />
@@ -193,6 +193,10 @@ export default {};
   max-height: max-content;
   border-radius: 50%;
   display: flex;
+  width: 88px;
+  height: 88px;
+  justify-content: center;
+  align-items: center;
 }
 .principle-card-bg img {
   width: 64px;

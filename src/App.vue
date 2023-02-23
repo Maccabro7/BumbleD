@@ -3,9 +3,13 @@
     <NavBar />
   </div>
   <RouterView />
+  <div class="footer-container">
+    <Footer />
+  </div>
 </template>
 
 <script setup>
+import Footer from "./components/Footer.vue";
 import NavBar from "./components/NavBar.vue";
 import { RouterLink, RouterView } from "vue-router";
 </script>

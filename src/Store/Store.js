@@ -5,6 +5,9 @@ export const useStore = defineStore("data", {
     horizontalTabID: 0,
     hTabHover: -1,
     mainService: "",
+    tradeServiceIndex: 0,
+    tradeServiceHover: -1,
+    tradeService: "",
   }),
   actions: {
     setTabHorizontal(index) {
@@ -15,6 +18,15 @@ export const useStore = defineStore("data", {
     },
     setMainService(service) {
       this.mainService = service;
+    },
+    setTradeServiceIndex(index) {
+      this.tradeServiceIndex = index;
+    },
+    setTradeServiceHover(index) {
+      this.tradeServiceHover = index;
+    },
+    setTradeService(service) {
+      this.tradeServiceIndex = service;
     },
   },
 });

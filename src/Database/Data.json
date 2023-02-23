@@ -53,60 +53,100 @@
 
   "TradeServices": [
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "PlumbingElectric",
+      "title": "Plumbing & Electric Systems",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_plumbing_electric.webp)",
+      "description": "We understand the importance of choosing the right tiles or flooring for your space, and our team is dedicated to helping you make an informed decision. We take into consideration factors like traffic, maintenance, durability, and style to suggest the best options for you. Whether you're looking for a traditional or contemporary look, our tiling and flooring services can bring your vision to life. And, with the added option of underfloor heating, you can enjoy warmth and comfort all year round. Our goal is to provide you with a beautiful and functional space that exceeds your expectations",
+      "features": [
+        "Underfloor Heating",
+        "Smart Home",
+        "Solar Panels",
+        "Water Filtration"
+      ]
     },
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "Flooring",
+      "title": "Flooring & Tiling",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_flooring_tiling.webp)",
+      "description": "We understand the importance of choosing the right tiles or flooring for your space, and our team is dedicated to helping you make an informed decision. We take into consideration factors like traffic, maintenance, durability, and style to suggest the best options for you. Whether you're looking for a traditional or contemporary look, our tiling and flooring services can bring your vision to life. And, with the added option of underfloor heating, you can enjoy warmth and comfort all year round. Our goal is to provide you with a beautiful and functional space that exceeds your expectations",
+      "features": [
+        "Wide selection of Materials",
+        "Custom Designs",
+        "Expert Instalation",
+        "Durable Finish"
+      ]
     },
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "Repointing",
+      "title": "Repointing & Rendering",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_repointing_rendering.webp)",
+      "description": "Protect your home from the elements and ensure its longevity with our repointing and rendering services. Our skilled tradesmen will expertly repair and restore your brickwork or frame, ensuring that it is fully protected from rain, sun, and other external forces. This not only maintains the beauty and structural integrity of your home, but also prevents moisture and water from penetrating the interior, preserving the quality and longevity of your interior spaces",
+      "features": [
+        "Protect the brickwork or frame",
+        "Prolongs the quality of the building",
+        "Prevents moisture issues",
+        "Enhances the overall look and value"
+      ]
     },
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "BespokeJoinery",
+      "title": "Bespoke Joinery & Carpentry",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_bespoke_joinery.webp)",
+      "description": "Bespoke joinery and carpentry offer a unique touch to your home or building, providing the perfect solution for your specific requirements. Our skilled craftsmen have years of experience in creating customized wooden pieces that blend seamlessly into your space. From intricate shelving units to grand staircases, we provide bespoke joinery and carpentry services to bring your vision to life. Whether you want to add a touch of elegance with a beautiful wooden door or require a practical storage solution, our team can design and create the perfect piece to suit your needs. With a focus on quality and attention to detail, we ensure that every piece of bespoke joinery and carpentry we create is built to last, so you can enjoy it for years to come",
+      "features": [
+        "Customised woodwork design",
+        "Wide range of materials and finishes",
+        "Quality craftsmanship",
+        "Seamless integration with your home"
+      ]
     },
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "Painting",
+      "title": "Painting & Decorating",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_painting_decorating.webp)",
+      "description": "Enhance the look and feel of your space with our painting and decorating services. Our team of experts will help you choose the perfect colour scheme that fits your style and mood, and bring it to life with precise and high-quality paint application. Not only will your space look great, but it will also be protected from mould and bacteria, creating a healthy and hygienic environment. Whether it's a simple touch-up or a complete makeover, we're here to transform your space into the perfect reflection of you",
+      "features": [
+        "Mood-enhancing colour selection",
+        "Protection against mould and bacteria",
+        "High-quality paint application",
+        "Durable and long-lasting finish"
+      ]
     },
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "Driveway",
+      "title": "Driveway & Garden Landscaping",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_driveway_landscaping.webp)",
+      "description": "Transform your outdoor space into a beautiful, functional, and enjoyable area with our garden and driveway landscaping services. Our team of expert gardeners will work with you to design and create a garden that complements your home and suits your lifestyle. Whether you want a well-manicured lawn, colorful flower beds, or a cozy seating area, we can make it happen. And, if you want to improve the look of your driveway, we offer a range of options, including paving, gravel, and decorative stones. With our help, your outdoor space will become a place you can't wait to spend time in",
+      "features": [
+        "Garden arragement and design",
+        "Pathway installation",
+        "Fencing and wall installation",
+        "Irrigation system & Flower beds",
+        "Outdoor lighting installation",
+        "Garden furniture and placement"
+      ]
     },
     {
-      "service": "Bathroom",
-      "title": "Bathroom Installation",
+      "service": "PropMaintenance",
+      "title": "Property Maintenance",
       "icon": "../src/assets/icons/ico_bathroom.svg",
-      "background": "url(../../src/assets/img/main_bathroom_installations.webp)",
-      "description": "A bathroom renovation can bring much-needed comfort and luxury to your daily routine. Our team of professionals will work with you to create a customized bathroom design that suits your personal style and functional needs. From adding new fixtures and modernizing the plumbing, to creating a spa-like atmosphere with tiles and lighting, the possibilities are endless. With our help, you can transform your bathroom into a relaxing oasis that you'll love spending time in. Whether you're looking for a simple refresh or a complete overhaul, we're here to help bring your vision to life",
-      "features": ""
+      "background": "url(../../src/assets/img/trade_property_maintenance.webp)",
+      "description": "Property maintenance is the upkeep and care of a property to ensure it stays in good working order. Our property maintenance services cover a wide range of tasks, including but not limited to",
+      "features": [
+        "Repairs and fixing of leaks",
+        "Electrical and Plumbing repairs",
+        "Replacing light fixtures and bulbs",
+        "Regular cleaning and garden maintenance",
+        "Seasonal checks & preparation",
+        "Preventive maintenance",
+        "And many more!"
+      ]
     }
   ],
   "Testimonials": [

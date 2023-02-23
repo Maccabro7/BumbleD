@@ -1,9 +1,13 @@
 <template>
-  <h1>Contact us</h1>
+  <ContactHeroSection />
 </template>
 
 <script>
-export default {};
+import ContactHeroSection from "../components/ContactUs/ContactHeroSection.vue";
+
+export default {
+  components: { ContactHeroSection },
+};
 </script>
 
 <style></style>

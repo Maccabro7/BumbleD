@@ -5,7 +5,6 @@
     <HomeAboutUs />
     <HomeTestimonials />
     <HomeDesignBuild />
-    <Footer />
   </main>
 </template>
 
@@ -15,7 +14,7 @@ import HomeJobListSection from "../components/Home/HomeJobListSection.vue";
 import HomeAboutUs from "../components/Home/HomeAboutUs.vue";
 import HomeTestimonials from "../components/Home/HomeTestimonials.vue";
 import HomeDesignBuild from "../components/Home/HomeDesignBuild.vue";
-import Footer from "../components/Footer.vue";
+
 // components: {
 //   HomeHeroSection,
 //     HomeJobListSection,
