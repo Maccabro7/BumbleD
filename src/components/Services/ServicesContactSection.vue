@@ -18,7 +18,7 @@
         >
       </div>
       <div class="servContactImage">
-        <img src="../../assets/img/img_mail 1.svg" alt="" />
+        <img src="../../assets/img/img_mail.svg" alt="" />
       </div>
     </div>
   </section>
