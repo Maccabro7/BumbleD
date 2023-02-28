@@ -35,7 +35,8 @@ import "vue3-carousel/dist/carousel.css";
 import MainServicesTab from "../TabSystem/MainServicesTab.vue";
 import { useStore } from "../../Store/Store";
 import { storeToRefs } from "pinia";
-import mainServices from "../../Database/Data.json";
+// import mainServices from "../../Database/Data.json";
+import { database } from "../../Database/Database";
 
 import { onMounted, onUnmounted, ref, watch } from "vue";
 
@@ -50,7 +51,7 @@ export default {
   setup() {
     const store = useStore();
     const { horizontalTabID } = storeToRefs(store);
-    const allServices = mainServices.tabMainServicesSlides;
+    const allServices = database.tabMainServicesSlides;
 
     const MainCarousel = ref(null);
 
