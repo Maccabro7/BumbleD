@@ -199,4 +199,4 @@ const database = {
   ],
 };
 
-export default database;
+export { database };
