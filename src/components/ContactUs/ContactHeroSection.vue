@@ -77,8 +77,23 @@
               :status="formMessageValid"
               :error="formMessageError"
             />
-
-            <button @type="submit">Submit form</button>
+            <div class="loadingDots" v-if="isSending">
+              <HollowDotsSpinner
+                :animation-duration="1000"
+                :dot-size="11"
+                :dots-num="3"
+                color="var(--primary-c)"
+              />
+            </div>
+            <button
+              class="formButton"
+              @type="submit"
+              v-if="!isSending"
+              v-show="!sentStatus"
+            >
+              {{ submitStatus }}
+            </button>
+            <p v-if="sentStatus">Message sent! Thank you!</p>
           </form>
         </div>
         <div class="g-recaptcha" @load="handleRecaptcha"></div>
@@ -93,9 +108,10 @@
 import { onMounted, ref, watch } from "vue";
 import BaseInput from "./BaseInput.vue";
 import emailjs from "@emailjs/browser";
+import { HollowDotsSpinner } from "epic-spinners";
 
 export default {
-  components: { BaseInput },
+  components: { BaseInput, HollowDotsSpinner },
   setup() {
     const isRecaptchaVerified = ref(false);
 
@@ -121,7 +137,9 @@ export default {
 
     const form = ref(null);
 
+    const isSending = ref(false);
     const sentStatus = ref(false);
+    const submitStatus = ref("Send message!");
 
     const isFormValid = () => {
       if (
@@ -138,9 +156,11 @@ export default {
       }
     };
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
       if (isRecaptchaVerified.value == true && isFormValid()) {
-        sendEmail();
+        submitStatus.value = "sending...";
+        isSending.value = true;
+        await sendEmail();
       }
     };
 
@@ -163,6 +183,8 @@ export default {
           (result) => {
             console.log("success", result.text);
             sentStatus.value = true;
+            isSending.value = false;
+            submitStatus.value = "Message sent!";
           },
           (error) => {
             console.log("Failed", error.text);
@@ -246,6 +268,9 @@ export default {
       formMessageError,
       form,
       sendEmail,
+      submitStatus,
+      sentStatus,
+      isSending,
     };
   },
 };
@@ -302,5 +327,32 @@ textarea {
 .info-text {
   color: grey;
   font-size: 0.6rem;
+}
+
+.formButton {
+  padding: 12px;
+  background-color: var(--primary-c);
+  color: var(--text-c);
+  border-radius: var(--border-radius);
+  border: none;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.formButton:hover {
+  background-color: var(--accent-c);
+}
+
+.formButton:active {
+  background-color: var(--accent-dark-c);
+}
+
+.loadingDots {
+  margin: auto;
+}
+
+form p {
+  color: var(--primary-c);
+  text-align: center;
 }
 </style>
