@@ -38,6 +38,8 @@
             action="submit"
             @submit.prevent="submitForm"
             class="contact-form"
+            ref="form"
+            id="form"
           >
             <BaseInput
               v-model="formName"
@@ -45,6 +47,7 @@
               :status="formNameValid"
               :required="true"
               :error="formNameError"
+              name="from_name"
             />
             <div class="form-telemail">
               <p class="info-text">
@@ -56,6 +59,7 @@
                 type="email"
                 :status="formEmailValid"
                 :error="formEmailError"
+                name="from_email"
               />
               <BaseInput
                 v-model="formPhone"
@@ -63,6 +67,7 @@
                 type="tel"
                 :status="formPhoneValid"
                 :error="formPhoneError"
+                name="from_phone"
               />
             </div>
             <BaseInput
@@ -85,8 +90,9 @@
 <!-- :data-sitekey="siteKey" -->
 
 <script>
-import { nextTick, onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import BaseInput from "./BaseInput.vue";
+import emailjs from "@emailjs/browser";
 
 export default {
   components: { BaseInput },
@@ -113,7 +119,9 @@ export default {
     const formPhoneError = ref("");
     const formMessageError = ref("");
 
-    const oldFormPhone = ref("");
+    const form = ref(null);
+
+    const sentStatus = ref(false);
 
     const isFormValid = () => {
       if (
@@ -130,18 +138,37 @@ export default {
       }
     };
 
-    const submitForm = () => {
+    const submitForm = (e) => {
       if (isRecaptchaVerified.value == true && isFormValid()) {
-        console.log("Submitted");
-        console.log(
-          formName.value,
-          formEmail.value,
-          formPhone.value,
-          formMessage.value
-        );
-      } else {
-        console.log("failed");
+        sendEmail();
       }
+    };
+
+    const sendEmail = () => {
+      const userData = {
+        from_name: formName,
+        from_email: formEmail,
+        from_phone: formPhone,
+        message: formMessage,
+      };
+
+      emailjs
+        .sendForm(
+          "bbd_form_contact",
+          "bbd_template",
+          form.value,
+          "f-2vZ5eTGKgH1KAPn"
+        )
+        .then(
+          (result) => {
+            console.log("success", result.text);
+            sentStatus.value = true;
+          },
+          (error) => {
+            console.log("Failed", error.text);
+            sentStatus.value = false;
+          }
+        );
     };
 
     const onlyNumbers = (string) => {
@@ -217,6 +244,8 @@ export default {
       formEmailError,
       formPhoneError,
       formMessageError,
+      form,
+      sendEmail,
     };
   },
 };

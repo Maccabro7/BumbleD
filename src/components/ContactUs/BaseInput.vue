@@ -12,13 +12,14 @@
         :required="required"
         :class="status"
         @focusout="$emit('inputFocusOut', $event.target.value)"
+        :name="name"
       />
 
       <textarea
         v-if="type === 'textarea'"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
-        name=""
+        name="message"
         id=""
         cols="30"
         rows="10"
@@ -56,6 +57,10 @@ defineProps({
     default: "",
   },
   error: {
+    type: String,
+    default: "",
+  },
+  name: {
     type: String,
     default: "",
   },
