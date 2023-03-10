@@ -1,34 +1,164 @@
 <template>
   <div class="input-wrap">
-    <label></label>
-    <input type="text" placeholder="name" />
+    <div>
+      <label class="label">{{ label }}</label>
+      <input
+        v-if="type != 'textarea'"
+        class="input"
+        :type="type"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+        placeholder=" "
+        :required="required"
+        :class="status"
+        @focusout="$emit('inputFocusOut', $event.target.value)"
+      />
+
+      <textarea
+        v-if="type === 'textarea'"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        required
+        :class="status"
+      ></textarea>
+      <p class="error">{{ error }}</p>
+      <!-- <label class="label">{{ label }}</label> -->
+    </div>
   </div>
 </template>
 
-<!-- <script setup>
+<script setup>
+import { onMounted, ref, watch } from "vue";
+
 defineProps({
   label: {
     type: String,
     default: "",
   },
+  modelValue: {
+    type: String,
+    default: "",
+  },
+  type: {
+    type: String,
+    default: "text",
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  status: {
+    type: String,
+    default: "",
+  },
+  error: {
+    type: String,
+    default: "",
+  },
+
+  // status: Idle, Valid, Invalid, Disabled
 });
-</script> -->
+
+// const inputRef = ref("");
+// const status = ref("");
+
+const inputData = ref("");
+
+// console.log(inputRef);
+// console.log(inputRef.value);
+// console.log(inputRef.input);
+
+// if (inputRef < 2) {
+//       console.log(inputRef.value);
+//       status.value = "valid";
+//     } else {
+//       status.value = "invalid";
+//     }
+</script>
 
 <style>
 .input-wrap {
-  padding: 8px;
-  width: 256px;
+  width: 100%;
   margin: 0 auto;
+  position: relative;
+  /* transition: var(--transition); */
 }
 
-.input-wrap input {
+input {
   height: 24px;
   width: 100%;
-  position: relative;
+  border: none;
 }
 
-.input-wrap input::before {
-  content: "";
+.input,
+textarea {
+  position: relative;
+  border: 1.7px solid grey;
+  border-radius: 1px;
+  outline: none;
+  background-color: none;
+  caret-color: var(--primary-c);
+  transition: var(--transition);
+}
+
+.input:hover,
+textarea:hover {
+  border-color: var(--accent-c);
+  background-color: var(--accent-low-c);
+}
+
+.input:focus,
+textarea:focus {
+  border-color: var(--primary-c);
+  background-color: var(--primary-low-c);
+  border-radius: 3px;
+}
+
+/* .label {
   position: absolute;
+  left: 0.2rem;
+  top: 0.4rem;
+  padding: 0 0.5rem;
+  z-index: 1;
+  color: var(--primary-c);
+  cursor: text;
+  transition: all 0.2s ease-in;
+}
+
+
+.input:focus ~ .label,
+input:not(:placeholder-shown).input:not(:focus) ~ .label,
+textarea:focus ~ .label,
+text:not(:placeholder-shown).input:not(:focus) ~ .label {
+  top: -0.6rem;
+  font-size: 0.6rem;
+} */
+
+label {
+  font-size: 0.7rem;
+  color: var(--primary-c);
+}
+
+.idle {
+}
+
+.valid {
+  border-color: var(--primary-c);
+  background-color: var(--primary-low-c);
+}
+
+.invalid {
+  background-color: #ffbaba;
+  border-color: red;
+  border-radius: 3px;
+}
+
+.error {
+  color: red;
+  font-size: 0.6rem;
 }
 </style>

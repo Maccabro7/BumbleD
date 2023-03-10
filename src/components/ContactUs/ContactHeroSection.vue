@@ -34,24 +34,190 @@
           </div>
         </div>
         <div class="contact-form-box">
-          <form action="submit" @submit.prevent="submitForm">
-            <BaseInput />
+          <form
+            action="submit"
+            @submit.prevent="submitForm"
+            class="contact-form"
+          >
+            <BaseInput
+              v-model="formName"
+              label="Name"
+              :status="formNameValid"
+              :required="true"
+              :error="formNameError"
+            />
+            <div class="form-telemail">
+              <p class="info-text">
+                Tell us your prefered choice of contact (One required)
+              </p>
+              <BaseInput
+                v-model="formEmail"
+                label="Email"
+                type="email"
+                :status="formEmailValid"
+                :error="formEmailError"
+              />
+              <BaseInput
+                v-model="formPhone"
+                label="Phone"
+                type="tel"
+                :status="formPhoneValid"
+                :error="formPhoneError"
+              />
+            </div>
+            <BaseInput
+              v-model="formMessage"
+              label="Message"
+              type="textarea"
+              :status="formMessageValid"
+              :error="formMessageError"
+            />
+
+            <button @type="submit">Submit form</button>
           </form>
         </div>
+        <div class="g-recaptcha" @load="handleRecaptcha"></div>
       </div>
     </div>
   </section>
 </template>
 
+<!-- :data-sitekey="siteKey" -->
+
 <script>
+import { nextTick, onMounted, ref, watch } from "vue";
 import BaseInput from "./BaseInput.vue";
 
 export default {
   components: { BaseInput },
   setup() {
-    const submitForm = () => {};
+    const isRecaptchaVerified = ref(false);
 
-    return { submitForm };
+    const handleRecaptcha = (response) => {
+      isRecaptchaVerified.value = true;
+      // console.log("reCAPTCHA verified: ", response);
+    };
+
+    const formName = ref("");
+    const formEmail = ref("");
+    const formPhone = ref("");
+    const formMessage = ref("");
+
+    const formNameValid = ref("idle");
+    const formEmailValid = ref("idle");
+    const formPhoneValid = ref("idle");
+    const formMessageValid = ref("idle");
+
+    const formNameError = ref("");
+    const formEmailError = ref("");
+    const formPhoneError = ref("");
+    const formMessageError = ref("");
+
+    const oldFormPhone = ref("");
+
+    const isFormValid = () => {
+      if (
+        formNameValid.value === "valid" &&
+        formEmailValid.value === "valid" &&
+        formPhoneValid.value === "valid" &&
+        formMessageValid.value === "valid"
+      ) {
+        console.log("Form all Valid");
+        return true;
+      } else {
+        console.log("Form not Valid");
+        return false;
+      }
+    };
+
+    const submitForm = () => {
+      if (isRecaptchaVerified.value == true && isFormValid()) {
+        console.log("Submitted");
+        console.log(
+          formName.value,
+          formEmail.value,
+          formPhone.value,
+          formMessage.value
+        );
+      } else {
+        console.log("failed");
+      }
+    };
+
+    const onlyNumbers = (string) => {
+      return string.replace(
+        /[a-zA-Z`!@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?~£]/,
+        ""
+      );
+    };
+
+    onMounted(() => {
+      const siteKey = ref("6Ld7U9AkAAAAALGGlfTWjdLiRtGqSP6lkeC4XFFR");
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(siteKey.value, { action: "submit" })
+          .then((token) => {
+            handleRecaptcha(token);
+          });
+      });
+      watch(formName, () => {
+        if (formName.value.length > 2) {
+          formNameError.value = "";
+          formNameValid.value = "valid";
+        } else {
+          formNameError.value = "Please enter at least 3 characters";
+          formNameValid.value = "invalid";
+        }
+      });
+      watch(formEmail, () => {
+        if (formEmail.value.includes("@") && formEmail.value.includes(".")) {
+          formEmailError.value = "";
+          formEmailValid.value = "valid";
+        } else {
+          formEmailError.value = "Please enter a valid Email Address";
+          formEmailValid.value = "invalid";
+        }
+      });
+      watch(formPhone, () => {
+        formPhone.value = onlyNumbers(formPhone.value);
+        if (formPhone.value.length === 11) {
+          formPhoneError.value = "";
+          formPhoneValid.value = "valid";
+        } else {
+          formPhoneError.value = "Please enter standard UK phone number";
+          formPhoneValid.value = "invalid";
+        }
+      });
+
+      watch(formMessage, () => {
+        if (formMessage.value.length < 351) {
+          formMessageError.value = "";
+          formMessageValid.value = "valid";
+        } else {
+          formMessageError.value = "Only 350 characters are allowed";
+          formMessageValid.value = "invalid";
+        }
+      });
+    });
+
+    return {
+      submitForm,
+      formName,
+      formEmail,
+      formPhone,
+      formMessage,
+      handleRecaptcha,
+      formNameValid,
+      formEmailValid,
+      formPhoneValid,
+      formMessageValid,
+      onlyNumbers,
+      isFormValid,
+      formNameError,
+      formEmailError,
+      formPhoneError,
+      formMessageError,
+    };
   },
 };
 </script>
@@ -66,8 +232,6 @@ export default {
 }
 
 .contact-box {
-  background-color: var(--primary-low-o-c);
-  padding: 24px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -88,7 +252,26 @@ export default {
 
 .contact-form-box {
   height: 100%;
-  width: 50%;
+  width: 256px;
   background-color: var(--text-c);
+  padding: 48px;
+}
+
+.contact-form,
+.form-telemail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-content: center;
+  justify-items: center;
+}
+
+textarea {
+  width: 100%;
+}
+
+.info-text {
+  color: grey;
+  font-size: 0.6rem;
 }
 </style>

@@ -43,6 +43,7 @@ body {
 
   --secundary-c: #555;
   --accent-c: #cc7a00;
+  --accent-low-c: rgba(204, 122, 0, 0.3);
   --accent-dark-c: #794800;
   --light-grey-c: #555;
   --dark-grey-c: #555;

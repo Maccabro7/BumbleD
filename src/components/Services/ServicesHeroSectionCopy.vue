@@ -27,10 +27,6 @@
 
     <template #addons> <Navigation /> </template>
   </Carousel>
-
-  <div>
-    <img :src="workingB" alt="" />
-  </div>
 </template>
 
 <script>
@@ -40,7 +36,6 @@ import MainServicesTab from "../TabSystem/MainServicesTab.vue";
 import { useStore } from "../../Store/Store";
 import { storeToRefs } from "pinia";
 import database from "../../Database/Data.json";
-// import { database } from "../../Database/Database";
 
 import { onMounted, onUnmounted, ref, watch } from "vue";
 
@@ -63,18 +58,6 @@ export default {
       MainCarousel.value.slideTo(index);
     };
 
-    const services = [
-      {
-        service: "Construction",
-        title: "Construction Solutions",
-        icon: "../src/assets/icons/ico_design.svg",
-        background: import("/src/assets/img/main_construction_solution.webp"),
-        description:
-          "Our company specializes in finding solutions for every construction need. With a focus on extensions and big projects, we have the experience and expertise to bring your vision to life. From start to  finish, we'll guide you through every step of the process to ensure a seamless and successful outcome. Trust us to bring you construction dreams to reality",
-      },
-    ];
-
-    const workingB = services[0].background;
     onMounted(() => {
       watch(MainCarousel.value.data.currentSlide, () => {
         store.setTabHorizontal(MainCarousel.value.data.currentSlide.value);
@@ -90,8 +73,6 @@ export default {
       allServices,
       changeSlide,
       MainCarousel,
-      services,
-      workingB,
     };
   },
 };
