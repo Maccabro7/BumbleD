@@ -64,25 +64,9 @@ defineProps({
     type: String,
     default: "",
   },
-
-  // status: Idle, Valid, Invalid, Disabled
 });
 
-// const inputRef = ref("");
-// const status = ref("");
-
 const inputData = ref("");
-
-// console.log(inputRef);
-// console.log(inputRef.value);
-// console.log(inputRef.input);
-
-// if (inputRef < 2) {
-//       console.log(inputRef.value);
-//       status.value = "valid";
-//     } else {
-//       status.value = "invalid";
-//     }
 </script>
 
 <style>
@@ -146,9 +130,6 @@ text:not(:placeholder-shown).input:not(:focus) ~ .label {
 label {
   font-size: 0.7rem;
   color: var(--primary-c);
-}
-
-.idle {
 }
 
 .valid {

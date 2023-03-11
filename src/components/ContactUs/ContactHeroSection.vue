@@ -50,9 +50,6 @@
               name="from_name"
             />
             <div class="form-telemail">
-              <p class="info-text">
-                Tell us your prefered choice of contact (One required)
-              </p>
               <BaseInput
                 v-model="formEmail"
                 label="Email"
@@ -157,7 +154,7 @@ export default {
     };
 
     const submitForm = async (e) => {
-      if (isRecaptchaVerified.value == true && isFormValid()) {
+      if (isRecaptchaVerified.value === true && isFormValid()) {
         submitStatus.value = "sending...";
         isSending.value = true;
         await sendEmail();
@@ -330,6 +327,7 @@ textarea {
 }
 
 .formButton {
+  display: block;
   padding: 12px;
   background-color: var(--primary-c);
   color: var(--text-c);
@@ -337,6 +335,8 @@ textarea {
   border: none;
   transition: var(--transition);
   font-size: 0.9rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .formButton:hover {
