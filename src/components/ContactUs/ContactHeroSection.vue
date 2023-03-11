@@ -203,6 +203,8 @@ export default {
         window.grecaptcha
           .execute(siteKey.value, { action: "submit" })
           .then((token) => {
+            console.log(token);
+            console.log(isRecaptchaVerified);
             handleRecaptcha(token);
           });
       });
