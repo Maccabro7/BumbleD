@@ -112,9 +112,34 @@ export default {
   setup() {
     const isRecaptchaVerified = ref(false);
 
-    const handleRecaptcha = (response) => {
+    const handleRecaptcha = async (token) => {
+      const requestData = {
+        secret: "6Ld7U9AkAAAAABdPrRoz1ChOjAhke3QHjhttwVxc",
+        response: token,
+      };
+      const requestOptions = {
+        mode: "no-cors",
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify(requestData),
+      };
+      fetch("https://www.google.com/recaptcha/api/siteverify", requestData)
+        .then((response) => response.json())
+        .then((response) => console.log(JSON.stringify(response)));
+
       isRecaptchaVerified.value = true;
       // console.log("reCAPTCHA verified: ", response);
+    };
+
+    const loadCaptcha = () => {
+      const siteKey = ref("6Ld7U9AkAAAAALGGlfTWjdLiRtGqSP6lkeC4XFFR");
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(siteKey.value, { action: "submit" })
+          .then((token) => {
+            handleRecaptcha(token);
+          });
+      });
     };
 
     const formName = ref("");
@@ -203,8 +228,8 @@ export default {
         window.grecaptcha
           .execute(siteKey.value, { action: "submit" })
           .then((token) => {
-            console.log(token);
-            console.log(isRecaptchaVerified);
+            // console.log(token);
+            // console.log(isRecaptchaVerified);
             handleRecaptcha(token);
           });
       });
